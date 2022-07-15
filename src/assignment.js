@@ -23,14 +23,15 @@ function sumOfNumbers(arrayOfNumbers) {
  * 
  * Count all even numbers within an array of numbers.
  * If you did Challenge - 2, remove the comment in the line just after this function
- * 
  * @param {Array} arrayOfNumbers the array containing even or non-even numbers
  * @returns number the count of even numbers
  */
 function countEvenNumbers(arrayOfNumbers) {
-    return arrayOfNumbers.length;
+  evenNumbers = arrayOfNumbers.filter((number) => (number%2) === 0)
+  
+    return evenNumbers.length;
 }
-// assignment.countEvenNumbers = countEvenNumbers;
+ assignment.countEvenNumbers = countEvenNumbers;
 
 /**
  * Challenge - 3
@@ -41,15 +42,17 @@ function countEvenNumbers(arrayOfNumbers) {
  * E.g 51.21 should just be 51 (hint: Math.trunc(...) function)
  * If you did Challenge - 3, remove the comment in the line just after this function
  * 
- * See https://www.thoughtco.com/celcius-to-farenheit-formula-609227 for the conversion formula
- * 
+
  * @param {Array} arrayOfNumbers the array containing temperatures in Celsius to be converted
  * @returns Array the converted temperatures in Fahrenheit
  */
 function celsiusToFahrenheit(arrayOfNumbers) {
-    return arrayOfNumbers;
+  const toFahrenheit = (temp) => {
+    return((temp * (9 / 5)) + 32)
+  }
+    return arrayOfNumbers.map(num => Math.trunc(toFahrenheit(num)))
 }
-// assignment.celsiusToFahrenheit = celsiusToFahrenheit;
+assignment.celsiusToFahrenheit = celsiusToFahrenheit;
 
 
 // ========================
